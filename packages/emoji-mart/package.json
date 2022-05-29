@@ -1,6 +1,6 @@
 {
   "name": "emoji-mart",
-  "version": "5.0.0.1",
+  "version": "5.0.0.2",
   "description": "Emoji picker for the web",
   "license": "BSD-3-Clause",
   "homepage": "https://missiveapp.com/open/emoji-mart",
@@ -30,9 +30,6 @@
   "scripts": {
     "build": "parcel build --no-autoinstall",
     "prepublishOnly": "yarn build"
-  },
-  "dependencies": {
-    "simplebar-react": "^2.3.0"
   },
   "devDependencies": {
     "@parcel/transformer-inline-string": "2.3.2",
