@@ -9,6 +9,8 @@ import { Emoji } from '../Emoji'
 import { Navigation } from '../Navigation'
 import { PureInlineComponent } from '../HOCs'
 
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 const Performance = {
   rowsPerRender: 10,
 }
@@ -945,7 +947,12 @@ export default class Picker extends Component {
           <div class="padding-lr">{this.renderSearch()}</div>
         )}
 
-        <div ref={this.refs.scroll} class="scroll flex-grow padding-lr">
+        <SimpleBar
+          scrollableNodeProps={{ ref: this.refs.scroll }}
+          className="emoji-mart-scroll"
+          forceVisible="y"
+          autoHide={true}
+        >
           <div
             style={{
               width: this.props.perLine * this.props.emojiButtonSize,
@@ -957,7 +964,7 @@ export default class Picker extends Component {
 
             <div class="spacer"></div>
           </div>
-        </div>
+        </SimpleBar>
 
         {this.props.navPosition == 'bottom' && this.renderNav()}
         {this.props.previewPosition == 'bottom' && this.renderPreview()}
